@@ -1,8 +1,16 @@
 package org.example;
 
 public class App {
-  public static void main(String[] args) {
-    System.out.println("You can put the driver program for your Payroll Calculator here!");
-    System.out.println("Feel free to create other files, as needed, to house your code.");
-  }
+    public static void main(String[] args) {
+        System.out.println("Welcome to the Payroll Program!\n");
+
+        PayrollInput input = PayrollInput.collectUserInput();
+        PayrollCalculator payroll = new PayrollCalculator(input);
+        payroll.calculate();
+
+        PayrollReport report = new PayrollReport(payroll);
+        report.printReport();
+
+        System.out.println("\nThank you for using the Payroll Program!");
+    }
 }
